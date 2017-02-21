@@ -3,48 +3,48 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="9e49b91cbe1b08ad903b47ccf989185fe4e4a8f4">
-        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8c4004de4312dca8ac366fbc91493af0600cfb3b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="52c44c6a2025dcc2ab1b20bc42fcfaf8febfa204">
-        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5c4de8f1ec62c38704e977ba67975375fcc4b6b7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_883f2e36e0c54270a59293578b1c09cc6d4bcd33\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_4e420d9d4c67b207c3881697430feef62d5da957\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jar="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_f2b658cf946b4610454b187758169e97cddbdabe\classes.dex" />
+        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_ae02b96fd869e1d7728e1c31e9501e5fe4d2c7f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c5e3b00b7f30b01c6539c1dd9ed7d05ac99b374d">
+        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_e685dde145fe8b03304e31f353bcc94098a3dc32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_379b61e9af70801111483d5450e1609e2d1c1289\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="270a6bd1b90f290fbda9143cbdfe6cac6de2ccfe">
+        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ec93cf856bce9642567af9f09cab2b69dc58138c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_acfd4076ebce9251ffeee241bfd0042de7febe60\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -53,7 +53,7 @@
         optimize="true"
         revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_1f0be003b8da540ca3219a4dd63c3d04136e3813\classes.dex" />
+        <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_1f0be003b8da540ca3219a4dd63c3d04136e3813\classes.dex" />
     </item>
 
 </items>

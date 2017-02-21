@@ -1,7 +1,7 @@
-#Mon Feb 20 14:22:09 EST 2017
-base.0=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Assignment-2\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5c4de8f1ec62c38704e977ba67975375fcc4b6b7
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Assignment-2\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_8c4004de4312dca8ac366fbc91493af0600cfb3b\\classes.dex
-base.1=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Assignment-2\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_8c4004de4312dca8ac366fbc91493af0600cfb3b
-file.0=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Assignment-2\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_5c4de8f1ec62c38704e977ba67975375fcc4b6b7\\classes.dex
+#Tue Feb 21 13:55:40 EST 2017
+base.0=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_e685dde145fe8b03304e31f353bcc94098a3dc32
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ec93cf856bce9642567af9f09cab2b69dc58138c\\classes.dex
+base.1=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ec93cf856bce9642567af9f09cab2b69dc58138c
+file.0=C\:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_e685dde145fe8b03304e31f353bcc94098a3dc32\\classes.dex

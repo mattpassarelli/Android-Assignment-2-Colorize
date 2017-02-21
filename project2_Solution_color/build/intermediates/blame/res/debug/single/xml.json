@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Assignment-2\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
-        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Assignment-2\\project2_Solution_color\\src\\main\\res\\xml\\preferences.xml"
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\xml\\preferences.xml",
+        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\src\\main\\res\\xml\\preferences.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\xml\\file_paths.xml",
+        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\src\\main\\res\\xml\\file_paths.xml"
     }
 ]

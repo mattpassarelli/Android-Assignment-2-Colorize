@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\src\debug\shaders"/></dataSet></merger>

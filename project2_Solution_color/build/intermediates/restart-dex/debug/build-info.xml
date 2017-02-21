@@ -5,45 +5,46 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="264943738635283"
-    token="-4560581192493315065"
+    timestamp="13431714126696"
+    token="4975576302753423096"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="110" />
+        duration="367" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="16" />
+        duration="102" />
     <task
         name="verifier"
-        duration="2" />
+        duration="6" />
 
     <artifact
-        location="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="262334619922041"
+        timestamp="10522622082253"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
+            location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="264943738635283"
+        timestamp="13076298233364"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
             type="RESOURCES" />
+    </build>
+    <build
+        timestamp="13431714126696"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\Matt\Documents\School\CPSC 475\Assignment-2\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
             type="DEX" />
     </build>
 
