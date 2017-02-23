@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.example.solution_color.R;
 
 
-
 public class SeekBarPreference extends Preference implements OnSeekBarChangeListener {
 	
 	private final String TAG = getClass().getName();

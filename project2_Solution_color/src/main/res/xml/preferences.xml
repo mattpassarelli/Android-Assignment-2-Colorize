@@ -1,11 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-    <EditTextPreference android:title="Your Name"
-        android:key="username"
-        android:summary="Please provide your username"></EditTextPreference>
-    <CheckBoxPreference android:title="Sample Checkbox Pref"
-        android:defaultValue="false"
-        android:summary="Longwinded explanation goes here"
-        android:key="applicationUpdates" />
-    
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:robobunny="http://robobunny.com"
+    >
+
+    <PreferenceCategory android:title="Share Settings">
+
+        <EditTextPreference
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Share Subject"
+            android:key="edit_text_preference_1"
+            android:summary="The subject of the message you'd like to share" />
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:key="edit_text_preference_1"
+            android:title="Share Text"
+            android:summary="The body of the message you'll share" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Preference category">
+        <PreferenceScreen
+            android:key="Bars"
+            android:title="@string/CustomizeImage"
+            android:summary="@string/Customize_Descrip"
+            android:persistent="false">
+            <com.example.helpers.SeekBarPreference
+                android:key="sketch"
+                android:title="@string/Sketchiness"
+                android:summary="@string/Sketchiness_Descrip"
+                android:defaultValue="50"
+                android:max="100"
+                robobunny:min="1"
+                robobunny:unitsLeft=""
+                robobunny:unitsRight="%"
+                />
+            <com.example.helpers.SeekBarPreference
+                android:key="saturation"
+                android:title="@string/saturation"
+                android:summary="@string/Saturation_Descrip"
+                android:defaultValue="50"
+                android:max="100"
+                robobunny:min="1"
+                robobunny:unitsLeft=""
+                robobunny:unitsRight="%"
+                />
+        </PreferenceScreen>
+    </PreferenceCategory>
 </PreferenceScreen>

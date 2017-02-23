@@ -5,29 +5,29 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="4488566676602"
+    timestamp="14658102777850"
     token="4975576302753423096"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1064" />
+        duration="459" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="787" />
+        duration="110" />
     <task
         name="verifier"
-        duration="338" />
+        duration="5" />
 
     <artifact
         location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
         type="MAIN" />
 
     <build
-        timestamp="4488566676602"
+        timestamp="14658102777850"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
