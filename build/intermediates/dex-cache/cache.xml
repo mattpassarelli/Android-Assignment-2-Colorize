@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="ef2ac10fbf9295385329ba403cafa3ff51549039">
+        sha1="5a6f7e30ba8a1e60f27164e1d26c4b810029deae">
         <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_e685dde145fe8b03304e31f353bcc94098a3dc32\classes.dex" />
     </item>
     <item
@@ -34,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="831c32ac4e836d5bddd9b15d0202387e6d36f409">
+        sha1="73274e10b006a447005cd37a88078103dabedad9">
         <dex dex="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ec93cf856bce9642567af9f09cab2b69dc58138c\classes.dex" />
     </item>
     <item

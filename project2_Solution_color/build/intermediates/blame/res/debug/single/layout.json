@@ -84,12 +84,12 @@
         "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_time.xml"
     },
     {
-        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\layout\\seek_bar_preference.xml",
         "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\src\\main\\res\\layout\\seek_bar_preference.xml"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
+        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",

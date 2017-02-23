@@ -5,7 +5,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import android.widget.Toast;
 
 public class SettingsActivity extends Activity {
 	@Override

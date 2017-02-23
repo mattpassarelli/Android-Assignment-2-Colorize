@@ -20,7 +20,7 @@
             android:summary="The body of the message you'll share" />
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Preference category">
+    <PreferenceCategory android:title="Rendering Options" android:key="rendering">
         <PreferenceScreen
             android:key="Bars"
             android:title="@string/CustomizeImage"
@@ -40,9 +40,9 @@
                 android:key="saturation"
                 android:title="@string/saturation"
                 android:summary="@string/Saturation_Descrip"
-                android:defaultValue="50"
-                android:max="100"
-                robobunny:min="1"
+                android:defaultValue="127"
+                android:max="255"
+                robobunny:min="0"
                 robobunny:unitsLeft=""
                 robobunny:unitsRight="%"
                 />

@@ -2,6 +2,7 @@ package com.example.solution_color;
 
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         background = (ImageView) findViewById(R.id.picture);
         background.setBackgroundResource(R.drawable.gutters);
+        imageBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.gutters);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         myToolbar.getBackground().setAlpha(80);
@@ -75,19 +77,25 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
                 break;
             case R.id.action_undo:
-                Camera_Helpers.delSavedImage(path);
-                //TODO: imageBitmap = (Bitmap) R.drawable.gutters;
-                background = (ImageView) findViewById(R.id.picture);
-                background.setImageResource(R.drawable.gutters);
-                background.setScaleType(ImageView.ScaleType.FIT_CENTER);
-                background.setScaleType(ImageView.ScaleType.FIT_XY);
+                undo();
                 break;
             case R.id.action_B_W:
                 getBWImage();
                 break;
-
+            case R.id.action_colorize:
+                getColorImage();
+                break;
         }
         return true;
+    }
+
+    private void undo() {
+        Camera_Helpers.delSavedImage(path);
+        background = (ImageView) findViewById(R.id.picture);
+        background.setImageResource(R.drawable.gutters);
+        background.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        background.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.gutters);
     }
 
     public void launchCamera(View view) {
@@ -131,12 +139,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getBWImage() {
-        //SharedPreferences pref = getActivity().getPref
-
         //TODO: the 50 will be changed when I figure out how to get the int from preferences
-        Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, 50);
+
+        SharedPreferences prefs = this.getPreferences(Context.MODE_PRIVATE);
+        int sketch = prefs.getInt("sketch", 50);
+
+        Toast.makeText(this, "" + sketch, Toast.LENGTH_LONG).show();
+
+        Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
         background = (ImageView) findViewById(R.id.picture);
         background.setImageBitmap(BW);
+    }
+
+    public void getColorImage() {
+        //By redoing the Black and White sketch, it means I don't have to worry about checking if the user
+        //pressed sketch to begin with because people can be idiots and rush
+
+        SharedPreferences prefs = this.getPreferences(Context.MODE_PRIVATE);
+        int sketch = prefs.getInt("sketch", 50);
+        float sat = prefs.getFloat("saturation", 127f);
+
+        Toast.makeText(this, "Sketch " + sketch + " Saturation "+ sat, Toast.LENGTH_LONG).show();
+
+        //TODO: get preferences working so I can change these numbers
+        Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
+        Bitmap CLR = BitMap_Helpers.colorBmp(imageBitmap, sat);
+        background = (ImageView) findViewById(R.id.picture);
+
+        //TODO: Figure out how to make the merged the background
+        BitMap_Helpers.merge(CLR, BW);
+
+        background.setImageBitmap(CLR);
     }
 }
 

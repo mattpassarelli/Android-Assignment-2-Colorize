@@ -5,33 +5,47 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="14658102777850"
+    timestamp="4032488873031"
     token="4975576302753423096"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="459" />
+        duration="489" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="110" />
+        duration="60" />
     <task
         name="verifier"
-        duration="5" />
+        duration="6" />
 
     <artifact
-        location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
-        type="MAIN" />
+        location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="14658102777850"
+        timestamp="3451668762585"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="3802613557774"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
+    </build>
+    <build
+        timestamp="4032488873031"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>
