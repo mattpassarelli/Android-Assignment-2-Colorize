@@ -8,36 +8,34 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.style.MetricAffectingSpan;
 import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.library.bitmap_utilities.BitMap_Helpers;
 
 import java.io.File;
-import java.io.StringReader;
-import java.net.URI;
 
 public class MainActivity extends AppCompatActivity {
 
-    private File picture;
+    private File picture, edited;
     private String path;
+    private Uri file;
     private int width, height;
     private ImageView background;
     private Bitmap imageBitmap;
+    private SharedPreferences prefs;
     private String[] perms = {"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"};
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("");
 
-        requestPermissions(perms, 200);
+        requestPermissions(perms, CONSTANTS.PERMISSIONS_INT);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         width = display.widthPixels;
         height = display.heightPixels;
@@ -57,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
         background.setBackgroundResource(R.drawable.gutters);
         imageBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.gutters);
 
+        prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
-        myToolbar.getBackground().setAlpha(80);
+        myToolbar.getBackground().setAlpha(CONSTANTS.APP_BAR_ALPHA);
         setSupportActionBar(myToolbar);
     }
 
@@ -85,8 +85,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_colorize:
                 getColorImage();
                 break;
+            case R.id.action_share:
+                shareImage();
+                break;
         }
         return true;
+    }
+
+    private void shareImage() {
+    //TODO this needs to share the edited photo. Not the one taken
+        try {
+            Intent send = new Intent(Intent.ACTION_SEND);
+            send.setType("text/jpeg");
+            String body = prefs.getString("edit_text_preference_2", getString(R.string.DEFAULT_BODY));
+            String subject = prefs.getString("edit_text_preference_1", getString(R.string.DEFAULT_SUBJECT));
+            send.putExtra(Intent.EXTRA_SUBJECT, subject);
+            send.putExtra(Intent.EXTRA_TEXT, body);
+            send.putExtra(Intent.EXTRA_STREAM, file);
+            startActivity(Intent.createChooser(send, "Share via"));
+        } catch (Exception e) {
+            Toast.makeText(this, "Error: You must take a picture first", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void undo() {
@@ -104,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
         File external = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         picture = new File(external, "temp.jpg");
-        Uri file = Uri.fromFile(picture);
+        file = Uri.fromFile(picture);
         path = picture.getAbsolutePath();
 
         camera.putExtra(MediaStore.EXTRA_OUTPUT, file);
@@ -139,10 +158,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getBWImage() {
-        //TODO: the 50 will be changed when I figure out how to get the int from preferences
 
-        SharedPreferences prefs = this.getPreferences(Context.MODE_PRIVATE);
-        int sketch = prefs.getInt("sketch", 50);
+        int sketch = prefs.getInt("sketch", CONSTANTS.DEFAULT_SKETCHINESS);
 
         Toast.makeText(this, "" + sketch, Toast.LENGTH_LONG).show();
 
@@ -155,15 +172,17 @@ public class MainActivity extends AppCompatActivity {
         //By redoing the Black and White sketch, it means I don't have to worry about checking if the user
         //pressed sketch to begin with because people can be idiots and rush
 
-        SharedPreferences prefs = this.getPreferences(Context.MODE_PRIVATE);
-        int sketch = prefs.getInt("sketch", 50);
-        float sat = prefs.getFloat("saturation", 127f);
+        int sketch = prefs.getInt("sketch", CONSTANTS.DEFAULT_SKETCHINESS);
+        int sat = prefs.getInt("saturation", CONSTANTS.DEFAULT_SATURATION);
 
-        Toast.makeText(this, "Sketch " + sketch + " Saturation "+ sat, Toast.LENGTH_LONG).show();
+        //take the int sat from settings and convert it to a float for the coloBmp method
+        float saturation = ((float) sat / 100f) * 255f;
 
-        //TODO: get preferences working so I can change these numbers
+        //Toast.makeText(this, "Sketch " + sketch + " Saturation " +  saturation, Toast.LENGTH_LONG).show();
+
         Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
-        Bitmap CLR = BitMap_Helpers.colorBmp(imageBitmap, sat);
+        Bitmap CLR = BitMap_Helpers.colorBmp(imageBitmap, saturation);
+
         background = (ImageView) findViewById(R.id.picture);
 
         //TODO: Figure out how to make the merged the background

@@ -5,43 +5,36 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="4032488873031"
+    timestamp="9157159159018"
     token="4975576302753423096"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="489" />
+        duration="338" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="60" />
+        duration="50" />
     <task
         name="verifier"
-        duration="6" />
+        duration="5" />
 
     <artifact
         location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="3451668762585"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="6320506180600"
+        verifier="BINARY_MANIFEST_FILE_CHANGE" >
         <artifact
             location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="3802613557774"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-    </build>
-    <build
-        timestamp="4032488873031"
+        timestamp="9157159159018"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"

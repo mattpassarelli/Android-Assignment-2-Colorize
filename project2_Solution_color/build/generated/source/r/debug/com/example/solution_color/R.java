@@ -1605,7 +1605,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int action0=0x7f0c0054;
-        public static final int action_B_W=0x7f0c0067;
+        public static final int action_B_W=0x7f0c0068;
         public static final int action_bar=0x7f0c0041;
         public static final int action_bar_activity_content=0x7f0c0000;
         public static final int action_bar_container=0x7f0c0040;
@@ -1613,7 +1613,7 @@ containing a value of this type.
         public static final int action_bar_spinner=0x7f0c0001;
         public static final int action_bar_subtitle=0x7f0c0022;
         public static final int action_bar_title=0x7f0c0021;
-        public static final int action_colorize=0x7f0c0068;
+        public static final int action_colorize=0x7f0c0069;
         public static final int action_context_bar=0x7f0c0042;
         public static final int action_divider=0x7f0c0058;
         public static final int action_menu_divider=0x7f0c0002;
@@ -1621,9 +1621,9 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c003e;
         public static final int action_mode_bar_stub=0x7f0c003d;
         public static final int action_mode_close_button=0x7f0c0023;
-        public static final int action_settings=0x7f0c006a;
-        public static final int action_share=0x7f0c0069;
-        public static final int action_undo=0x7f0c0066;
+        public static final int action_settings=0x7f0c006b;
+        public static final int action_share=0x7f0c006a;
+        public static final int action_undo=0x7f0c0067;
         public static final int activity_chooser_view_content=0x7f0c0024;
         public static final int alertTitle=0x7f0c0030;
         public static final int always=0x7f0c001b;
@@ -1691,6 +1691,7 @@ containing a value of this type.
         public static final int showCustom=0x7f0c000f;
         public static final int showHome=0x7f0c0010;
         public static final int showTitle=0x7f0c0011;
+        public static final int sketchBar=0x7f0c0066;
         public static final int spacer=0x7f0c002c;
         public static final int split_action_bar=0x7f0c0007;
         public static final int src_atop=0x7f0c0015;
@@ -1766,10 +1767,12 @@ containing a value of this type.
     public static final class string {
         public static final int CustomizeImage=0x7f060014;
         public static final int Customize_Descrip=0x7f060015;
-        public static final int Saturation_Descrip=0x7f060016;
-        public static final int Settings=0x7f060017;
-        public static final int Sketchiness=0x7f060018;
-        public static final int Sketchiness_Descrip=0x7f060019;
+        public static final int DEFAULT_BODY=0x7f060016;
+        public static final int DEFAULT_SUBJECT=0x7f060017;
+        public static final int Saturation_Descrip=0x7f060018;
+        public static final int Settings=0x7f060019;
+        public static final int Sketchiness=0x7f06001a;
+        public static final int Sketchiness_Descrip=0x7f06001b;
         public static final int abc_action_bar_home_description=0x7f060000;
         public static final int abc_action_bar_home_description_format=0x7f060001;
         public static final int abc_action_bar_home_subtitle_description_format=0x7f060002;
@@ -1789,46 +1792,46 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with=0x7f060010;
         public static final int abc_shareactionprovider_share_with_application=0x7f060011;
         public static final int abc_toolbar_collapse_description=0x7f060012;
-        public static final int action_settings=0x7f06001a;
-        public static final int app_name=0x7f06001b;
-        public static final int b_w=0x7f06001c;
-        public static final int color=0x7f06001d;
-        public static final int dialog_based_preferences=0x7f06001e;
-        public static final int dialog_title_edittext_preference=0x7f06001f;
-        public static final int dialog_title_list_preference=0x7f060020;
-        public static final int hello_world=0x7f060021;
-        public static final int inline_preferences=0x7f060022;
-        public static final int launch_preferences=0x7f060023;
-        public static final int preference_attributes=0x7f060024;
-        public static final int revert=0x7f060025;
-        public static final int saturation=0x7f060026;
-        public static final int share=0x7f060027;
-        public static final int shareTitle=0x7f060028;
-        public static final int sharemessage=0x7f060029;
+        public static final int action_settings=0x7f06001c;
+        public static final int app_name=0x7f06001d;
+        public static final int b_w=0x7f06001e;
+        public static final int color=0x7f06001f;
+        public static final int dialog_based_preferences=0x7f060020;
+        public static final int dialog_title_edittext_preference=0x7f060021;
+        public static final int dialog_title_list_preference=0x7f060022;
+        public static final int hello_world=0x7f060023;
+        public static final int inline_preferences=0x7f060024;
+        public static final int launch_preferences=0x7f060025;
+        public static final int preference_attributes=0x7f060026;
+        public static final int revert=0x7f060027;
+        public static final int saturation=0x7f060028;
+        public static final int share=0x7f060029;
+        public static final int shareTitle=0x7f06002a;
+        public static final int sharemessage=0x7f06002b;
         public static final int status_bar_notification_info_overflow=0x7f060013;
-        public static final int summary_checkbox_preference=0x7f06002a;
-        public static final int summary_child_preference=0x7f06002b;
-        public static final int summary_edittext_preference=0x7f06002c;
-        public static final int summary_fragment_preference=0x7f06002d;
-        public static final int summary_intent_preference=0x7f06002e;
-        public static final int summary_list_preference=0x7f06002f;
-        public static final int summary_my_preference=0x7f060030;
-        public static final int summary_next_screen_toggle_preference=0x7f060031;
-        public static final int summary_off_advanced_toggle_preference=0x7f060032;
-        public static final int summary_on_advanced_toggle_preference=0x7f060033;
-        public static final int summary_parent_preference=0x7f060034;
-        public static final int summary_screen_preference=0x7f060035;
-        public static final int title_advanced_toggle_preference=0x7f060036;
-        public static final int title_checkbox_preference=0x7f060037;
-        public static final int title_child_preference=0x7f060038;
-        public static final int title_edittext_preference=0x7f060039;
-        public static final int title_fragment_preference=0x7f06003a;
-        public static final int title_intent_preference=0x7f06003b;
-        public static final int title_list_preference=0x7f06003c;
-        public static final int title_my_preference=0x7f06003d;
-        public static final int title_next_screen_toggle_preference=0x7f06003e;
-        public static final int title_parent_preference=0x7f06003f;
-        public static final int title_screen_preference=0x7f060040;
+        public static final int summary_checkbox_preference=0x7f06002c;
+        public static final int summary_child_preference=0x7f06002d;
+        public static final int summary_edittext_preference=0x7f06002e;
+        public static final int summary_fragment_preference=0x7f06002f;
+        public static final int summary_intent_preference=0x7f060030;
+        public static final int summary_list_preference=0x7f060031;
+        public static final int summary_my_preference=0x7f060032;
+        public static final int summary_next_screen_toggle_preference=0x7f060033;
+        public static final int summary_off_advanced_toggle_preference=0x7f060034;
+        public static final int summary_on_advanced_toggle_preference=0x7f060035;
+        public static final int summary_parent_preference=0x7f060036;
+        public static final int summary_screen_preference=0x7f060037;
+        public static final int title_advanced_toggle_preference=0x7f060038;
+        public static final int title_checkbox_preference=0x7f060039;
+        public static final int title_child_preference=0x7f06003a;
+        public static final int title_edittext_preference=0x7f06003b;
+        public static final int title_fragment_preference=0x7f06003c;
+        public static final int title_intent_preference=0x7f06003d;
+        public static final int title_list_preference=0x7f06003e;
+        public static final int title_my_preference=0x7f06003f;
+        public static final int title_next_screen_toggle_preference=0x7f060040;
+        public static final int title_parent_preference=0x7f060041;
+        public static final int title_screen_preference=0x7f060042;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f09007e;
@@ -1837,11 +1840,6 @@ containing a value of this type.
         public static final int Animation_AppCompat_DropDownUp=0x7f090081;
         /**  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
          */
         public static final int AppBaseTheme=0x7f090004;
         public static final int AppTheme=0x7f090082;

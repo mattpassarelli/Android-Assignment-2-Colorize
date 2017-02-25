@@ -46,5 +46,7 @@
     <string name="saturation">Saturation</string>
     <string name="Saturation_Descrip">Set color saturation. Higher values correlate with more colorful images</string>
     <string name="Settings">Settings</string>
+    <string name="DEFAULT_BODY">Please enter a deault body in settings</string>
+    <string name="DEFAULT_SUBJECT">Please enter a default subject in settings</string>
 
 </resources>

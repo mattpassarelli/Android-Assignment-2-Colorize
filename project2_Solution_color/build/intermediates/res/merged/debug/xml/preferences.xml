@@ -15,7 +15,7 @@
             android:defaultValue="Default value"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:key="edit_text_preference_1"
+            android:key="edit_text_preference_2"
             android:title="Share Text"
             android:summary="The body of the message you'll share" />
     </PreferenceCategory>
@@ -28,6 +28,7 @@
             android:persistent="false">
             <com.example.helpers.SeekBarPreference
                 android:key="sketch"
+                android:id="@+id/sketchBar"
                 android:title="@string/Sketchiness"
                 android:summary="@string/Sketchiness_Descrip"
                 android:defaultValue="50"
@@ -40,9 +41,9 @@
                 android:key="saturation"
                 android:title="@string/saturation"
                 android:summary="@string/Saturation_Descrip"
-                android:defaultValue="127"
-                android:max="255"
-                robobunny:min="0"
+                android:defaultValue="50"
+                android:max="100"
+                robobunny:min="1"
                 robobunny:unitsLeft=""
                 robobunny:unitsRight="%"
                 />
