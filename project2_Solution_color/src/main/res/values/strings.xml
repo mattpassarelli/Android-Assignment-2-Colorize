@@ -48,5 +48,7 @@
     <string name="Settings">Settings</string>
     <string name="DEFAULT_BODY">Please enter a deault body in settings</string>
     <string name="DEFAULT_SUBJECT">Please enter a default subject in settings</string>
+    <string name="Subject_Descrip">The subject of the message you\'d like to share</string>
+    <string name="Body_Descrip">The body of the message you\'ll share</string>
 
 </resources>

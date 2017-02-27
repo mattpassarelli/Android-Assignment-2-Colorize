@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
@@ -29,13 +30,14 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private File unedited, sketched, colored;
+    private File unedited;
     private String path;
     private Uri file;
     private int width, height;
     private ImageView background;
     private Bitmap imageBitmap;
     private SharedPreferences prefs;
+    private boolean cameraAccepted, readWriteAccepted;
     private String[] perms = {"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"};
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -116,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchCamera(View view) {
+//TODO: check if permissions were granted and try to handle those
+
 
         Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -138,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
             Camera_Helpers.saveProcessedImage(imageBitmap, unedited.getAbsolutePath());
 
-            Toast.makeText(this, "File made" + file.toString(), Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "File made" + file.toString(), Toast.LENGTH_LONG).show();
 
             imageBitmap = Camera_Helpers.loadAndScaleImage(unedited.getAbsolutePath(), height, width);
             background = (ImageView) findViewById(R.id.picture);
@@ -149,11 +153,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //I personally need this (I think) because of Nougat's permissions settings
-    public void onRequestPermissionsResult(int permsRequestCode, String[] permissions, int[] grantResults) {
+    public void onRequestPermissionsResult(int permsRequestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         switch (permsRequestCode) {
             case 200:
-                boolean cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+                readWriteAccepted = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+
                 break;
         }
     }
@@ -167,11 +173,6 @@ public class MainActivity extends AppCompatActivity {
         Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
         background = (ImageView) findViewById(R.id.picture);
         background.setImageBitmap(BW);
-
-        File external = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        sketched = new File(external, "Sketched.jpg");
-        file = Uri.fromFile(sketched);
-        path = sketched.getAbsolutePath();
 
         //Toast.makeText(this, "File made " + file.toString(), Toast.LENGTH_LONG).show();
     }
@@ -193,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
 
         background = (ImageView) findViewById(R.id.picture);
 
-        //TODO: Figure out how to make the merged the background
         BitMap_Helpers.merge(CLR, BW);
 
         background.setImageBitmap(CLR);

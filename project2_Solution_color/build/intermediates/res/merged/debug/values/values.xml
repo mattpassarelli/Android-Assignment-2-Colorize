@@ -194,6 +194,7 @@
     <integer name="abc_max_action_buttons">2</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="Body_Descrip">The body of the message you\'ll share</string>
     <string name="CustomizeImage">Customize Image</string>
     <string name="Customize_Descrip">Customize the levels of sketchiness and color saturation</string>
     <string name="DEFAULT_BODY">Please enter a deault body in settings</string>
@@ -202,6 +203,7 @@
     <string name="Settings">Settings</string>
     <string name="Sketchiness">Sketchiness</string>
     <string name="Sketchiness_Descrip">Set the BW threshold. A higher value will result in less detail and a whiter image</string>
+    <string name="Subject_Descrip">The subject of the message you\'d like to share</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>

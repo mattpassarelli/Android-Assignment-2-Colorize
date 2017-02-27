@@ -10,14 +10,13 @@
             android:singleLine="true"
             android:title="Share Subject"
             android:key="edit_text_preference_1"
-            android:summary="The subject of the message you'd like to share" />
+            android:summary="@string/Subject_Descrip" />
         <EditTextPreference
-            android:defaultValue="Default value"
             android:selectAllOnFocus="true"
             android:singleLine="true"
             android:key="edit_text_preference_2"
             android:title="Share Text"
-            android:summary="The body of the message you'll share" />
+            android:summary="@string/Body_Descrip" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Rendering Options" android:key="rendering">
