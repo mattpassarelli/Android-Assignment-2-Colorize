@@ -29,7 +29,7 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private File picture, edited;
+    private File unedited, sketched, colored;
     private String path;
     private Uri file;
     private int width, height;
@@ -93,19 +93,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void shareImage() {
-    //TODO this needs to share the edited photo. Not the one taken
-        try {
-            Intent send = new Intent(Intent.ACTION_SEND);
-            send.setType("text/jpeg");
-            String body = prefs.getString("edit_text_preference_2", getString(R.string.DEFAULT_BODY));
-            String subject = prefs.getString("edit_text_preference_1", getString(R.string.DEFAULT_SUBJECT));
-            send.putExtra(Intent.EXTRA_SUBJECT, subject);
-            send.putExtra(Intent.EXTRA_TEXT, body);
-            send.putExtra(Intent.EXTRA_STREAM, file);
-            startActivity(Intent.createChooser(send, "Share via"));
-        } catch (Exception e) {
-            Toast.makeText(this, "Error: You must take a picture first", Toast.LENGTH_LONG).show();
-        }
+        //TODO this needs to share the edited photo. Not the one taken
+
+        Intent send = new Intent(Intent.ACTION_SEND);
+        send.setType("image/plain");
+        String body = prefs.getString("edit_text_preference_2", getString(R.string.DEFAULT_BODY));
+        String subject = prefs.getString("edit_text_preference_1", getString(R.string.DEFAULT_SUBJECT));
+        send.putExtra(Intent.EXTRA_SUBJECT, subject);
+        send.putExtra(Intent.EXTRA_TEXT, body);
+        send.putExtra(Intent.EXTRA_STREAM, file);
+        startActivity(Intent.createChooser(send, "Share via"));
+
     }
 
     private void undo() {
@@ -122,9 +120,9 @@ public class MainActivity extends AppCompatActivity {
         Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         File external = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        picture = new File(external, "temp.jpg");
-        file = Uri.fromFile(picture);
-        path = picture.getAbsolutePath();
+        unedited = new File(external, "temp.jpg");
+        file = Uri.fromFile(unedited);
+        path = unedited.getAbsolutePath();
 
         camera.putExtra(MediaStore.EXTRA_OUTPUT, file);
         startActivityForResult(camera, CONSTANTS.REQUEST_TAKE_PHOTO);
@@ -138,8 +136,11 @@ public class MainActivity extends AppCompatActivity {
             options.inPreferredConfig = Bitmap.Config.ARGB_8888;
             imageBitmap = BitmapFactory.decodeFile(path, options);
 
-            Camera_Helpers.saveProcessedImage(imageBitmap, picture.getAbsolutePath());
-            imageBitmap = Camera_Helpers.loadAndScaleImage(picture.getAbsolutePath(), height, width);
+            Camera_Helpers.saveProcessedImage(imageBitmap, unedited.getAbsolutePath());
+
+            Toast.makeText(this, "File made" + file.toString(), Toast.LENGTH_LONG).show();
+
+            imageBitmap = Camera_Helpers.loadAndScaleImage(unedited.getAbsolutePath(), height, width);
             background = (ImageView) findViewById(R.id.picture);
             background.setImageBitmap(imageBitmap);
         } else {
@@ -161,11 +162,18 @@ public class MainActivity extends AppCompatActivity {
 
         int sketch = prefs.getInt("sketch", CONSTANTS.DEFAULT_SKETCHINESS);
 
-        Toast.makeText(this, "" + sketch, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, "" + sketch, Toast.LENGTH_LONG).show();
 
         Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
         background = (ImageView) findViewById(R.id.picture);
         background.setImageBitmap(BW);
+
+        File external = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+        sketched = new File(external, "Sketched.jpg");
+        file = Uri.fromFile(sketched);
+        path = sketched.getAbsolutePath();
+
+        //Toast.makeText(this, "File made " + file.toString(), Toast.LENGTH_LONG).show();
     }
 
     public void getColorImage() {
