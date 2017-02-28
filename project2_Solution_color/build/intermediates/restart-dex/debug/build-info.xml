@@ -5,19 +5,19 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="3587612684975"
+    timestamp="14741020986853"
     token="4975576302753423096"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="133" />
+        duration="135" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="19" />
     <task
         name="verifier"
         duration="2" />
@@ -27,14 +27,14 @@
         type="DEX" />
 
     <build
-        timestamp="3247957546934"
+        timestamp="14555454916857"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\outputs\apk\project2_Solution_color-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="3587612684975"
+        timestamp="14741020986853"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Matt\Documents\School\CPSC 475\Android-Assignment-2-Colorize\project2_Solution_color\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"

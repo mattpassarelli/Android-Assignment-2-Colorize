@@ -29,15 +29,14 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private File unedited, sent;
-    private String path;
+    private File unedited;
+    private String path = "/storage/emulated/0/Pictures/temp.jpg";
     private Uri file;
     private int width, height;
     private ImageView background;
     private Bitmap imageBitmap;
     private SharedPreferences prefs;
     private boolean cameraAccepted, readWriteAccepted;
-    private String[] perms = {"android.permission.CAMERA", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE"};
 
     @TargetApi(Build.VERSION_CODES.M)
     @Override
@@ -47,18 +46,27 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("");
 
-        requestPermissions(perms, CONSTANTS.PERMISSIONS_INT);
+        requestPermissions(CONSTANTS.PERMISSIONS, CONSTANTS.PERMISSIONS_INT);
         DisplayMetrics display = this.getResources().getDisplayMetrics();
         width = display.widthPixels;
         height = display.heightPixels;
 
 
-        //TODO: Fix persistent background thing
-
         background = (ImageView) findViewById(R.id.picture);
 
-        background.setBackgroundResource(R.drawable.gutters);
-        imageBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.gutters);
+        try {
+            imageBitmap = Camera_Helpers.loadAndScaleImage(path, height, width);
+            if (imageBitmap != null) {
+                background.setImageBitmap(imageBitmap);
+            } else {
+                background.setBackgroundResource(R.drawable.gutters);
+                imageBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.gutters);
+            }
+
+        } catch (Exception e) {
+            // ¯\_(ツ)_/¯
+            // eh
+        }
 
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -99,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void shareImage() {
-        sent = new File(path);
+        File sent = new File(path);
         Uri uri = Uri.fromFile(sent);
 
         Intent send = new Intent(Intent.ACTION_SEND);
@@ -109,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         send.putExtra(Intent.EXTRA_SUBJECT, subject);
         send.putExtra(Intent.EXTRA_TEXT, body);
         send.putExtra(Intent.EXTRA_STREAM, uri);
-        startActivity(Intent.createChooser(send, "Share via"));
+        startActivity(Intent.createChooser(send, getString(R.string.Share_Via)));
 
     }
 
@@ -124,11 +132,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void launchCamera(View view) {
 
-        if (Build.VERSION.SDK_INT >= 23 && !cameraAccepted || !readWriteAccepted) {
-            Toast.makeText(this, "One of the permissions was denied. Please allow both to properly use this app", Toast.LENGTH_LONG).show();
-        }
-        else
-        {
+        if (Build.VERSION.SDK_INT >= 23 && (!cameraAccepted || !readWriteAccepted)) {
+            Toast.makeText(this, R.string.Permissions_Denied, Toast.LENGTH_LONG).show();
+        } else {
 
             Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -158,21 +164,11 @@ public class MainActivity extends AppCompatActivity {
             background = (ImageView) findViewById(R.id.picture);
             background.setImageBitmap(imageBitmap);
         } else {
-            //Toast.makeText(this, "result code is " + resultCode + " request code is " + requestCode, Toast.LENGTH_LONG).show();
+            Toast thisIsLiterallySoThisIsNotBlank = new Toast(this);
+            thisIsLiterallySoThisIsNotBlank.cancel();
         }
     }
 
-    //I personally need this (I think) because of Nougat's permissions settings
-    public void onRequestPermissionsResult(int permsRequestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        switch (permsRequestCode) {
-            case 200:
-                cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                readWriteAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-
-                break;
-        }
-    }
 
     public void getBWImage() {
 
@@ -183,8 +179,7 @@ public class MainActivity extends AppCompatActivity {
         Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
         background = (ImageView) findViewById(R.id.picture);
         background.setImageBitmap(BW);
-
-        imageBitmap = BW;
+        
         File temp = new File(path);
         file = Uri.fromFile(temp);
         Camera_Helpers.saveProcessedImage(BW, path);
@@ -215,8 +210,19 @@ public class MainActivity extends AppCompatActivity {
 
         File temp = new File(path);
         file = Uri.fromFile(temp);
-        imageBitmap = CLR;
         Camera_Helpers.saveProcessedImage(CLR, path);
+    }
+
+    //I personally need this (I think) because of Nougat's permissions settings
+    public void onRequestPermissionsResult(int permsRequestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (permsRequestCode) {
+            case CONSTANTS.PERMISSIONS_INT:
+                cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                readWriteAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
+
+                break;
+        }
     }
 }
 
