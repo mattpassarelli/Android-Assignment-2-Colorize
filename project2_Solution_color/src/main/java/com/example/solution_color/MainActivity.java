@@ -2,7 +2,6 @@ package com.example.solution_color;
 
 
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -30,7 +29,7 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private File unedited;
+    private File unedited, sent;
     private String path;
     private Uri file;
     private int width, height;
@@ -53,9 +52,14 @@ public class MainActivity extends AppCompatActivity {
         width = display.widthPixels;
         height = display.heightPixels;
 
+
+        //TODO: Fix persistent background thing
+
         background = (ImageView) findViewById(R.id.picture);
+
         background.setBackgroundResource(R.drawable.gutters);
         imageBitmap = BitmapFactory.decodeResource(this.getResources(), R.drawable.gutters);
+
 
         prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
@@ -95,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void shareImage() {
-        //TODO this needs to share the edited photo. Not the one taken
+        sent = new File(path);
+        Uri uri = Uri.fromFile(sent);
 
         Intent send = new Intent(Intent.ACTION_SEND);
         send.setType("image/plain");
@@ -103,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         String subject = prefs.getString("edit_text_preference_1", getString(R.string.DEFAULT_SUBJECT));
         send.putExtra(Intent.EXTRA_SUBJECT, subject);
         send.putExtra(Intent.EXTRA_TEXT, body);
-        send.putExtra(Intent.EXTRA_STREAM, file);
+        send.putExtra(Intent.EXTRA_STREAM, uri);
         startActivity(Intent.createChooser(send, "Share via"));
 
     }
@@ -118,18 +123,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchCamera(View view) {
-//TODO: check if permissions were granted and try to handle those
 
+        if (Build.VERSION.SDK_INT >= 23 && !cameraAccepted || !readWriteAccepted) {
+            Toast.makeText(this, "One of the permissions was denied. Please allow both to properly use this app", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
 
-        Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-        File external = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-        unedited = new File(external, "temp.jpg");
-        file = Uri.fromFile(unedited);
-        path = unedited.getAbsolutePath();
+            File external = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+            unedited = new File(external, "temp.jpg");
+            file = Uri.fromFile(unedited);
+            path = unedited.getAbsolutePath();
 
-        camera.putExtra(MediaStore.EXTRA_OUTPUT, file);
-        startActivityForResult(camera, CONSTANTS.REQUEST_TAKE_PHOTO);
+            camera.putExtra(MediaStore.EXTRA_OUTPUT, file);
+            startActivityForResult(camera, CONSTANTS.REQUEST_TAKE_PHOTO);
+        }
     }
 
     @Override
@@ -148,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             background = (ImageView) findViewById(R.id.picture);
             background.setImageBitmap(imageBitmap);
         } else {
-            Toast.makeText(this, "result code is " + resultCode + " request code is " + requestCode, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "result code is " + resultCode + " request code is " + requestCode, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -157,8 +167,8 @@ public class MainActivity extends AppCompatActivity {
 
         switch (permsRequestCode) {
             case 200:
-                cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                readWriteAccepted = grantResults[2] == PackageManager.PERMISSION_GRANTED;
+                cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                readWriteAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
 
                 break;
         }
@@ -174,6 +184,11 @@ public class MainActivity extends AppCompatActivity {
         background = (ImageView) findViewById(R.id.picture);
         background.setImageBitmap(BW);
 
+        imageBitmap = BW;
+        File temp = new File(path);
+        file = Uri.fromFile(temp);
+        Camera_Helpers.saveProcessedImage(BW, path);
+
         //Toast.makeText(this, "File made " + file.toString(), Toast.LENGTH_LONG).show();
     }
 
@@ -184,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         int sketch = prefs.getInt("sketch", CONSTANTS.DEFAULT_SKETCHINESS);
         int sat = prefs.getInt("saturation", CONSTANTS.DEFAULT_SATURATION);
 
-        //take the int sat from settings and convert it to a float for the coloBmp method
+        //take the int sat from settings and convert it to a float for the colorBmp method
         float saturation = ((float) sat / 100f) * 255f;
 
         //Toast.makeText(this, "Sketch " + sketch + " Saturation " +  saturation, Toast.LENGTH_LONG).show();
@@ -197,6 +212,11 @@ public class MainActivity extends AppCompatActivity {
         BitMap_Helpers.merge(CLR, BW);
 
         background.setImageBitmap(CLR);
+
+        File temp = new File(path);
+        file = Uri.fromFile(temp);
+        imageBitmap = CLR;
+        Camera_Helpers.saveProcessedImage(CLR, path);
     }
 }
 

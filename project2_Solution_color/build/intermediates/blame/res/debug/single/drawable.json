@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_undo_white_18dp.png",
-        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\src\\main\\res\\drawable\\ic_undo_white_18dp.png"
-    },
-    {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_palette_white_18dp.png",
         "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\src\\main\\res\\drawable\\ic_palette_white_18dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_undo_white_18dp.png",
+        "source": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\src\\main\\res\\drawable\\ic_undo_white_18dp.png"
     },
     {
         "merged": "C:\\Users\\Matt\\Documents\\School\\CPSC 475\\Android-Assignment-2-Colorize\\project2_Solution_color\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
