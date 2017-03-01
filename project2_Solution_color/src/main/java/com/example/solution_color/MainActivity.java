@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void undo() {
         Camera_Helpers.delSavedImage(path);
-        background = (ImageView) findViewById(R.id.picture);
         background.setImageResource(R.drawable.gutters);
         background.setScaleType(ImageView.ScaleType.FIT_CENTER);
         background.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -161,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             //Toast.makeText(this, "File made" + file.toString(), Toast.LENGTH_LONG).show();
 
             imageBitmap = Camera_Helpers.loadAndScaleImage(unedited.getAbsolutePath(), height, width);
-            background = (ImageView) findViewById(R.id.picture);
+
             background.setImageBitmap(imageBitmap);
         } else {
             Toast thisIsLiterallySoThisIsNotBlank = new Toast(this);
@@ -177,12 +176,10 @@ public class MainActivity extends AppCompatActivity {
         //Toast.makeText(this, "" + sketch, Toast.LENGTH_LONG).show();
 
         Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
-        background = (ImageView) findViewById(R.id.picture);
+
         background.setImageBitmap(BW);
-        
-        File temp = new File(path);
-        file = Uri.fromFile(temp);
-        Camera_Helpers.saveProcessedImage(BW, path);
+
+        savedImageForReload(BW);
 
         //Toast.makeText(this, "File made " + file.toString(), Toast.LENGTH_LONG).show();
     }
@@ -202,15 +199,18 @@ public class MainActivity extends AppCompatActivity {
         Bitmap BW = BitMap_Helpers.thresholdBmp(imageBitmap, sketch);
         Bitmap CLR = BitMap_Helpers.colorBmp(imageBitmap, saturation);
 
-        background = (ImageView) findViewById(R.id.picture);
 
         BitMap_Helpers.merge(CLR, BW);
 
         background.setImageBitmap(CLR);
 
+        savedImageForReload(CLR);
+    }
+
+    private void savedImageForReload(Bitmap bitmap) {
         File temp = new File(path);
         file = Uri.fromFile(temp);
-        Camera_Helpers.saveProcessedImage(CLR, path);
+        Camera_Helpers.saveProcessedImage(bitmap, path);
     }
 
     //I personally need this (I think) because of Nougat's permissions settings
